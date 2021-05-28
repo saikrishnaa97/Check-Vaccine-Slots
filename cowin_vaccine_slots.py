@@ -50,17 +50,17 @@ def check_vaccine_slot(date,pincode,frequency,min18,min45,pref_slot):
        if i['min_age_limit'] == 18:
          if int(pref_slot) == 1 or int(pref_slot) == 0:
           if int(min18) != -1 and i['available_capacity_dose1'] >=int(min18):
-             msg+=str(i['available_capacity_dose1'])+" 1st Dose(s) of "+i['vaccine']+" is available at "+i['name']+","+i['address']+" for people above age of "+str(i['min_age_limit'])+"\n"
+             msg+=str(i['available_capacity_dose1'])+" 1st Dose(s) of "+i['vaccine']+" is available at "+i['name']+","+i['address']+" for people above age of "+str(i['min_age_limit'])+" for Rs. "+str(i['fee'])+"\n"
          if int(min18) != -1 and int(pref_slot) == 2 or int(pref_slot) == 0:
           if i['available_capacity_dose2'] >=int(min18):
-             msg+=str(i['available_capacity_dose2'])+" 2nd Dose(s) of "+i['vaccine']+" is available at "+i['name']+","+i['address']+" for people above age of "+str(i['min_age_limit'])+"\n"
+             msg+=str(i['available_capacity_dose2'])+" 2nd Dose(s) of "+i['vaccine']+" is available at "+i['name']+","+i['address']+" for people above age of "+str(i['min_age_limit'])+" for Rs. "+str(i['fee'])+"\n"
        elif i['min_age_limit'] == 45:
          if int(min45) != -1 and int(pref_slot) == 1 or int(pref_slot) == 0:
           if i['available_capacity_dose1'] >=int(min45):
-             msg+=str(i['available_capacity_dose1'])+" 1st Dose(s) of "+i['vaccine']+" is available at "+i['name']+","+i['address']+" for people above age of "+str(i['min_age_limit'])+"\n"
+             msg+=str(i['available_capacity_dose1'])+" 1st Dose(s) of "+i['vaccine']+" is available at "+i['name']+","+i['address']+" for people above age of "+str(i['min_age_limit'])+" for Rs. "+str(i['fee'])+"\n"
          if int(pref_slot) == 2 or int(pref_slot) == 0:
           if int(min45) != -1 and i['available_capacity_dose2'] >=int(min45):
-             msg+=str(i['available_capacity_dose2'])+" 2nd Dose(s) of "+i['vaccine']+" is available at "+i['name']+","+i['address']+" for people above age of "+str(i['min_age_limit'])+"\n"
+             msg+=str(i['available_capacity_dose2'])+" 2nd Dose(s) of "+i['vaccine']+" is available at "+i['name']+","+i['address']+" for people above age of "+str(i['min_age_limit'])+" for Rs. "+str(i['fee'])+"\n"
    if msg != "":
       print(msg)
       send_notif(date,msg)
